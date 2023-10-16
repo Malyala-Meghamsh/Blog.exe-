@@ -6,6 +6,8 @@ const authRoute =require("./routes/auth");
 const usersRoute=require("./routes/users");
 const postRoute=require("./routes/posts")
 const catRoute=require("./routes/categories");
+const subRoute = require("./routes/subscribe");
+const commentsRoute = require("./routes/comments");
 const multer=require("multer");
 const path= require("path")
 dotenv.config();
@@ -38,7 +40,8 @@ app.use("/api/auth",authRoute)
 app.use("/api/users",usersRoute)
 app.use("/api/posts",postRoute)
 app.use("/api/categories",catRoute)
-
+app.use("/api/subscribe", subRoute)
+app.use("/api/comments", commentsRoute)
 app.listen("5005",()=>{
     console.log("Backend is running");
 })
